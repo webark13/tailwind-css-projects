@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Alpine.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Responsive Sticky Navbar</title>
+  </head>
+  <body 
+    x-data="{navBarOpen: false, scrollFromTop: false}"
+    x-init="window.pageYOffset > 60 ? scrollFromTop = true : scrollFromTop = false"
+    @scroll.window="window.pageYOffset > 60 ? scrollFromTop = true : scrollFromTop = false"
+    :class="{'overflow-hidden': navBarOpen, 'overflow-auto': !navBarOpen}">
+    <header class="fixed w-full flex justify-between items-center px-4 md:px-12 h-24 bg-blue-500 transition-all duration-300" :class="{'h-24': !scrollFromTop, 'h-12': scrollFromTop}">
+      <a href="">
+        <img
+          src="https://res.cloudinary.com/thirus/image/upload/v1632162912/logos/chitchat-logo_pkpwwu.png"
+          alt="Chat with loved ones" class="h-10 transition-all duration-300" :class="{'h-10': !scrollFromTop, 'h-8': scrollFromTop}"/>
+      </a>
+      <nav>
+        <button class="md:hidden" @click="navBarOpen = !navBarOpen">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" 
+                class="h-8 w-8 text-white"/>
+              </svg>
+        </button>
+        <ul class="fixed w-full left-0 right-0 bg-blue-500 min-h-screen text-white space-y-4 p-4 translate-x-full transition duration-300 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:p-0 md:transform-none" :class="{'translate-x-full': !navBarOpen,'translate-x-0': navBarOpen}">
+            <li><a href="#">Home</a></li>
+            <li><a href="features">Features</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <!-- Hero Section Begins -->
+    <section class="pt-32 pb-16 px-8 md:px-12 bg-blue-500">
+      <div class="max-w-7xl mx-auto md:flex md:items-center md:justify-between">
+        <div class="md:flex-1 md:mr-6">
+          <h1 class="font-bold text-4xl md:text-5xl text-white leading-tight">
+            The Quickest way to Chat with your Loved Ones
+          </h1>
+          <p class="mt-4 text-lg text-white">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
+            aspernatur magni vitae veritatis.
+          </p>
+        </div>
+        <div class="md:flex-1">
+          <img
+            src="https://res.cloudinary.com/thirus/image/upload/v1632162912/logos/chat_ys7mog.svg"
+            alt="Chat with loved ones"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section Ends -->
+
+    <section id="features" class="min-h-screen"></section>
+    <section id="about" class="min-h-screen bg-gray-100"></section>
+    <section id="contact" class="min-h-screen"></section>
+  </body>
+</html>
