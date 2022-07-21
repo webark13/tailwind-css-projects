@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer{
+    .timeline-container-left{
+        @apply md:ml-0 md:mr-auto md:pl-0 md:pr-16;
+    }
+}
