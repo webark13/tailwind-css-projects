@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Landing Page with Tailwind</title>
+    </head>
+    <body class="">
+        <header
+            class="h-16 bg-gray-800 w-full flex justify-between items-center px-3 fixed inset-0"
+        >
+            <div class="">
+                <img src="images/logo.png" alt="logo" class="md:h-6 lg:h-10" />
+            </div>
+            <nav class="text-white flex items-center">
+                <div class="border px-3 py-1 rounded-sm md:hidden">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                </div>
+                <div class="hidden md:block">
+                    <ul
+                        class="inline-flex text-sm space-x-4 lg:text-base lg:space-x-8"
+                    >
+                        <li><a href="Home">Home</a></li>
+                        <li><a href="Features">Features</a></li>
+                        <li><a href="Screenshots">Screenshots</a></li>
+                        <li><a href="Testimonial">Testimonial</a></li>
+                        <li><a href="Plans">Plans</a></li>
+                        <li><a href="Downloads">Downloads</a></li>
+                        <li><a href="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <section
+            class="px-4 pt-24 text-white bg-gradient-to-r from-blue-500 to-cyan-300"
+        >
+            <div class="lg:flex max-w-lg mx-auto md:max-w-xl lg:max-w-4xl lg:py-16">
+                <div class="">
+                    <h1
+                        class="text-xl xs:text-2xl font-bold leading-relaxed lg:text-4xl"
+                    >
+                        Get your App Landing Page <br />With Proton Template
+                    </h1>
+                    <p class="pt-6 leading-loose text-sm">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Nihil recusandae atque sint deleniti saepe impedit
+                        obcaecati magnam sed, adipisci, excepturi reiciendis
+                        dicta dolorem aspernatur. Sapiente!
+                    </p>
+                    <a
+                        href="#"
+                        class="bg-white text-blue-500 px-8 py-4 inline-block rounded-full mt-5 font-bold uppercase tracking-wide text-sm mr-4"
+                        >Download Now</a
+                    >
+
+                    <a
+                        href="#"
+                        class="bg-transparent text-white px-8 py-4 inline-block rounded-full mt-5 font-bold uppercase tracking-wider text-sm border-2 border-white"
+                        >Get Started</a
+                    >
+                </div>
+                <img src="images/intro-mobile.png" alt="" class="lg:w-64 flex-shrink-0"/>
+            </div>
+        </section>
+
+        <section class="min-h-screen bg-gray-50 px-3">
+            <div class="py-16 text-center">
+                <h2 class="bg-blue-100 text-sm uppercase px-8 py-2 inline-block rounded-full tracking-wide font-bold">Features</h2>
+                <h3 class="mt-4 text-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-300 bg-clip-text text-transparent">Amazing Features</h3>
+            </div>
+            <div class="">
+                <div class="flex space-x-4 mr-4">
+                    <div>
+                        <h4 class="text-xl font-bold">User Friendly</h4>
+                        <p class="text-gray-500 pt-4 leading-loose text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, ea!</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-500 to-cyan-300 h-16 w-16 rounded-full flex-shrink-0">
+
+                    </div>
+                </div>
+                <div class="flex space-x-4 mr-4 mt-4">
+                    <div>
+                        <h4 class="text-xl font-bold">Super Fast Speed</h4>
+                        <p class="text-gray-500 pt-2 leading-loose text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, ea!</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-500 to-cyan-300 h-16 w-16 rounded-full flex-shrink-0">
+
+                    </div>
+                </div>
+                <div class="flex space-x-4 mr-4 mt-4">
+                    <div>
+                        <h4 class="text-xl font-bold">24/7 Support</h4>
+                        <p class="text-gray-500 pt-2 leading-loose text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, ea!</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-500 to-cyan-300 h-16 w-16 rounded-full flex-shrink-0">
+
+                    </div>
+                </div>
+            </div>
+
+            <img src="images/app.png" alt="" class="my-8">
+            
+            <div class="">
+                <div class="flex flex-row-reverse space-x-reverse space-x-4 ml-4">
+                    <div>
+                        <h4 class="text-xl font-bold">User Friendly</h4>
+                        <p class="text-gray-500 pt-4 leading-loose text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, ea!</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-500 to-cyan-300 h-16 w-16 rounded-full flex-shrink-0">
+
+                    </div>
+                </div>
+                <div class="flex flex-row-reverse space-x-reverse space-x-4 ml-4">
+                    <div>
+                        <h4 class="text-xl font-bold">Super Fast Speed</h4>
+                        <p class="text-gray-500 pt-2 leading-loose text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, ea!</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-500 to-cyan-300 h-16 w-16 rounded-full flex-shrink-0">
+
+                    </div>
+                </div>
+                <div class="flex flex-row-reverse space-x-reverse space-x-4 ml-4">
+                    <div>
+                        <h4 class="text-xl font-bold">24/7 Support</h4>
+                        <p class="text-gray-500 pt-2 leading-loose text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, ea!</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-500 to-cyan-300 h-16 w-16 rounded-full flex-shrink-0">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
