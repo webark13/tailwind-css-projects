@@ -1,0 +1,10 @@
+@tailwind base;
+
+.bg-card{
+    @apply absolute z-0 inset-0 bg-gradient-to-r from-cyan-400 to-emerald-400 shadow-md rounded-md transform -skew-y-6 sm:skew-y-0 sm:-rotate-6;
+}
+.btn{
+    @apply bg-gradient-to-r from-cyan-400 to-emerald-400 py-2 px-6 rounded-md shadow-md inline-block text-white font-bold text-sm mt-4 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-emerald-500;
+}
+@tailwind components;
+@tailwind utilities;
