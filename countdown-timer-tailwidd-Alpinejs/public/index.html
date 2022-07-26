@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+        integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Countdown timer With Tailwind and Alpine</title>
+</head>
+
+<body class="antialiased font-primary">
+    <div class="bg-home  px-4">
+        <div class="md:max-w-2xl lg:max-w-3xl mx-auto min-h-screen flex flex-col justify-between py-12">
+            <!-- Contdown Timer Starts-->
+            <div>
+                <div class="flex flex-wrap justify-center items-center gap-4" x-data="timer()" x-init="countdown()">
+                    <div class="timer-circle">
+                        <span class="text-white font-bold text-4xl block" x-text="days"></span>
+                        <span class="text-white text-sm block">Days</span>
+                    </div>
+                    <div class="timer-circle">
+                        <span class="text-white font-bold text-4xl block" x-text="hours"></span>
+                        <span class="text-white text-sm block">Hours</span>
+                    </div>
+                    <div class="timer-circle">
+                        <span class="text-white font-bold text-4xl block" x-text="minutes"></span>
+                        <span class="text-white text-sm block">Minutes</span>
+                    </div>
+                    <div class="timer-circle">
+                        <span class="text-white font-bold text-4xl block" x-text="seconds"></span>
+                        <span class="text-white text-sm block">Seconds</span>
+                    </div>
+                </div>
+                <!-- Contdown Timer Ends -->
+                <div class="mt-8 text-white text-center">
+                    <h1 class="text-4xl font-bold md:text-5xl">
+                        Project Coming Soon
+                    </h1>
+                    <p class="text-lg md:text-xl pt-4">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Suscipit accusantium, non natus alias eum quos
+                        eos adipisci quo doloribus temporibus iste at illo
+                        atque nisi!
+                    </p>
+                </div>
+                <form action="" class="mt-8 max-w-xl md:flex mx-auto">
+                    <input type="email" placeholder="Email Address" id="email"
+                        class="px-8 h-14 rounded-full w-full placeholder-gray-500 md:rounded-r-none md:flex-grow" />
+                    <button
+                        class="bg-pink-800 text-white uppercase font-bold text-sm text-center w-full md:w-1/3 px-8 h-14 mt-4 md:mt-0 rounded-full md:rounded-l-none">
+                        Sign Up
+                    </button>
+                </form>
+            </div>
+            <footer class="mt-8">
+                <img src="../assets/images/logo.svg" alt="" class="h-10 opacity-80 mx-auto" />
+                <div class="mt-4 mx-auto text-pink-800 text-lg flex space-x-4 justify-center items-center">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Alpine.js cdn link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js"
+        integrity="sha512-Atu8sttM7mNNMon28+GHxLdz4Xo2APm1WVHwiLW9gW4bmHpHc/E2IbXrj98SmefTmbqbUTOztKl5PDPiu0LD/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/js/all.min.js"
+        integrity="sha512-yk7SvYYZqGS11tWcb6cyoKiwgrNBeCHC7RebrVa0QOySVjh6WjEjaBaBue+VvDBHEfAGa0Z8/b6+LhoGSeweaw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Custom javascript -->
+    <script>
+        function timer() {
+            return {
+                days: '00',
+                hours: '00',
+                minutes: '00',
+                seconds: '00',
+                endTime: new Date("December 31, 2022 23:59:59 GMT+0530").getTime(),
+                now: new Date().getTime(),
+                timeLeft: 0,
+                countdown: function () {
+                    setInterval(() => {
+                        this.now = new Date().getTime();
+                        this.timeLeft = (this.endTime - this.now) / 1000;
+                        this.seconds = this.format(this.timeLeft % 60);
+                        this.minutes = this.format((this.timeLeft / 60) % 60);
+                        this.hours = this.format((this.timeLeft / (60 * 60)) % 24);
+                        this.days = this.format((this.timeLeft / (60 * 60 * 24)));
+                    }, 1000);
+
+                },
+                format: function(value) {
+                    if(value < 10) {
+                        return "0" + Math.floor(value);
+                    } else {
+                        return Math.floor(value);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
